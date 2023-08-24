@@ -10,27 +10,27 @@ int main(int __attribute__((unused))ac, char *av[])
 	char *line = NULL;
 	char **cmd = NULL;
 	int status = 0;
-	
+
 
 	while (1)
 	{
 		line = get_line();
-/*ctr+d*/	if (line == NULL)
+		if (line == NULL)
 		{
 			if (isatty(STDIN_FILENO) == 1)
 				write(STDOUT_FILENO, "\n", 1);
-			
-			return(status);
+
+			return (status);
 		}
 
 
 		cmd = tknzer(line);
 		if (!cmd)
 			continue;
-		
-	
+
+
 	status = exec_ute(cmd, av);
-	
+
 	}
 	return (0);
 }

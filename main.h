@@ -10,7 +10,7 @@
 #include <errno.h>
 #include <fcntl.h>
 int exec_ute(char **cmd, char **av);
- extern char **environ;
+extern char **environ;
 #define DELIM " \t\n"
 char **tknzer(char *line);
 char *get_line();

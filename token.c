@@ -6,8 +6,7 @@
  */
 char **tknzer(char *line)
 {
-	char *token;
-	char *linecpy = NULL;
+	char *token, *linecpy = NULL;
 	char **cmd = NULL;
 	int c = 0, i = 0;
 
@@ -15,9 +14,7 @@ char **tknzer(char *line)
 		return (NULL);
 
 	linecpy = _strdup(line);
-	
 	token = strtok(linecpy, DELIM);
-
 	if (token == NULL)
 	{
 		free(line), line = NULL;
@@ -30,7 +27,6 @@ char **tknzer(char *line)
 	token = strtok(NULL, DELIM);
 	}
 	free(linecpy), linecpy = NULL;
-
 	cmd = malloc(sizeof(char *) * (c + 1));
 	if (!cmd)
 	{
@@ -39,7 +35,6 @@ char **tknzer(char *line)
 	}
 
 	token = strtok(line, DELIM);
-
 	while (token)
 	{
 		cmd[i] = _strdup(token);

@@ -1,7 +1,9 @@
 #include "main.h"
 /**
- *
- *
+ * exec_ute - executes cmd
+ * @cmd: commands
+ * @av: arguments passed
+ * Return: always 0
  */
 int exec_ute(char **cmd, char **av)
 {
