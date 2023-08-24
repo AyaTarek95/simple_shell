@@ -5,11 +5,11 @@
  * @av: arguments
  * Return: always 0
  */
-int main(int __attribute__((unused))ac, char __attribute__((unused))*av[])
+int main(int __attribute__((unused))ac, char *av[])
 {
 	char *line = NULL;
 	char **cmd = NULL;
-	int k, status = 0;
+	int status = 0;
 	
 
 	while (1)
@@ -28,10 +28,9 @@ int main(int __attribute__((unused))ac, char __attribute__((unused))*av[])
 		if (!cmd)
 			continue;
 		
-		for (k = 0; cmd[k]; k++)
-			printf("%s\n", cmd[k]);
-
-	/**	status = execve(cmd, argv);*/
+	
+	status = exec_ute(cmd, av);
+	
 	}
 	return (0);
 }
